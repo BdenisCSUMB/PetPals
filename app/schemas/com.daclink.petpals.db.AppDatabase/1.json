@@ -1,0 +1,76 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "577e8b4b9a3dbc746b96c1c63afa02e9",
+    "entities": [
+      {
+        "tableName": "com.daclink.petpals.PETPAL_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`UserID` INTEGER PRIMARY KEY AUTOINCREMENT, `userName` TEXT, `petname` TEXT, `password` TEXT, `petage` INTEGER, `petsex` TEXT, `petlocation` TEXT, `petbreed` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "UserID",
+            "columnName": "UserID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "userName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petname",
+            "columnName": "petname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petage",
+            "columnName": "petage",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petsex",
+            "columnName": "petsex",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petlocation",
+            "columnName": "petlocation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petbreed",
+            "columnName": "petbreed",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "UserID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '577e8b4b9a3dbc746b96c1c63afa02e9')"
+    ]
+  }
+}

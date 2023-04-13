@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PetPals</string>
+    <string name="petpals">PetPals</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="view_messages">View Messages</string>
+    <string name="login">Login</string>
+    <string name="my_profile">my profile</string>
+    <string name="admin">admin</string>
+    <string name="logout">Logout</string>
+    <string name="petpal_logo">PetPal Logo</string>
+    <string name="x">x</string>
+    <string name="back">Back</string>
+</resources>
