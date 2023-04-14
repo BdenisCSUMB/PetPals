@@ -22,11 +22,11 @@ public interface PetPalUserDAO {
     @Delete
     void delete(PetPalUser petPalUser);
 
-    //@Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE)
-    //List<PetPalUser> getmUserID();
+    @Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE)
+    List<PetPalUser> getUserIDs();
 
-   // @Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE + " WHERE UserID = :userID")
-    //PetPalUser findPetPalUser (Integer userID);
+   @Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE + " WHERE userID = :userID")
+    PetPalUser findPetPalUser (int userID);
 
 
 }
