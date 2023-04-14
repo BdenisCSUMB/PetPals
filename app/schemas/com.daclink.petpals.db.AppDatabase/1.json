@@ -2,17 +2,17 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "577e8b4b9a3dbc746b96c1c63afa02e9",
+    "identityHash": "6b9f1051ff53ddf3d7a3ac4571ae9dd9",
     "entities": [
       {
-        "tableName": "com.daclink.petpals.PETPAL_TABLE",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`UserID` INTEGER PRIMARY KEY AUTOINCREMENT, `userName` TEXT, `petname` TEXT, `password` TEXT, `petage` INTEGER, `petsex` TEXT, `petlocation` TEXT, `petbreed` TEXT)",
+        "tableName": "PETPAL_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userName` TEXT, `petname` TEXT, `password` TEXT, `petage` INTEGER NOT NULL, `petsex` TEXT, `petlocation` TEXT, `petbreed` TEXT, `isAdmin` INTEGER)",
         "fields": [
           {
-            "fieldPath": "UserID",
-            "columnName": "UserID",
+            "fieldPath": "userID",
+            "columnName": "userID",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "userName",
@@ -36,7 +36,7 @@
             "fieldPath": "petage",
             "columnName": "petage",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "petsex",
@@ -55,12 +55,18 @@
             "columnName": "petbreed",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "isAdmin",
+            "columnName": "isAdmin",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
           "autoGenerate": true,
           "columnNames": [
-            "UserID"
+            "userID"
           ]
         },
         "indices": [],
@@ -70,7 +76,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '577e8b4b9a3dbc746b96c1c63afa02e9')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6b9f1051ff53ddf3d7a3ac4571ae9dd9')"
     ]
   }
 }

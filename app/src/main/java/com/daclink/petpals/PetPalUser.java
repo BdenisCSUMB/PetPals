@@ -9,28 +9,29 @@ import com.daclink.petpals.db.AppDatabase;
 public class PetPalUser {
 
     @PrimaryKey(autoGenerate = true)
-    private Integer UserID;
+    private int userID;
+
     private String userName;
     private String petname;
     private String password;
-    private Integer petage;
+    private int petage;
     private String petsex;
     private String petlocation;
     private String petbreed;
+    private Boolean isAdmin;
 
-
-    public PetPalUser(Integer UserID, String userName, String password) {
-        this.UserID = UserID;
+    public PetPalUser(String userName, String password) {
         this.userName = userName;
         this.password = password;
+        this.isAdmin = false;
     }
 
-    public Integer getUserID() {
-        return UserID;
+    public int getUserID() {
+        return userID;
     }
 
-    public void setUserID(Integer userID) {
-        UserID = userID;
+    public void setUserID(int userID) {
+        userID = userID;
     }
 
     public String getUserName() {
@@ -57,11 +58,11 @@ public class PetPalUser {
         this.password = password;
     }
 
-    public Integer getPetage() {
+    public int getPetage() {
         return petage;
     }
 
-    public void setPetage(Integer petage) {
+    public void setPetage(int petage) {
         this.petage = petage;
     }
 
@@ -88,4 +89,7 @@ public class PetPalUser {
     public void setPetbreed(String petbreed) {
         this.petbreed = petbreed;
     }
+
+    public Boolean getIsAdmin() { return isAdmin; }
+    public void setIsAdmin(Boolean isAdmin) { this.isAdmin = isAdmin; }
 }

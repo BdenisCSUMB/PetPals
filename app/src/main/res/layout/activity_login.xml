@@ -6,24 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <Button
-        android:id="@+id/login"
-        android:layout_width="151dp"
-        android:layout_height="50dp"
-        android:layout_gravity="start"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="64dp"
-        android:background="@drawable/rounded_corner"
-        android:enabled="false"
-        android:text="@string/login"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.2" />
-
     <EditText
         android:id="@+id/username"
         android:layout_width="326dp"
@@ -42,7 +24,6 @@
         android:id="@+id/password"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        android:textAlignment="center"
         android:layout_marginTop="8dp"
         android:autofillHints="@string/prompt_password"
         android:hint="@string/prompt_password"
@@ -50,6 +31,7 @@
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
@@ -59,12 +41,12 @@
         android:layout_width="326dp"
         android:layout_height="287dp"
         android:layout_marginTop="140dp"
+        android:contentDescription="@string/petpal_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/petpals"
-        android:contentDescription="@string/petpal_logo" />
+        app:srcCompat="@drawable/petpals" />
 
     <Button
         android:id="@+id/backbuttonlogin"
@@ -78,6 +60,19 @@
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="151dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
