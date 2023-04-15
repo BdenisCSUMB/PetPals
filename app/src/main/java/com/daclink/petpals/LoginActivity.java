@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
 
     PetPalUserDAO mPetPalUserDAO;
 
+    PetPalUser loginUser;
+
     List<PetPalUser> petPalUsers;
 
     @Override
@@ -37,17 +39,23 @@ public class LoginActivity extends AppCompatActivity {
         passwordEdit = findViewById(R.id.password);
         loginButton = findViewById(R.id.login_button);
 
-        mPetPalUserDAO = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.DB_NAME)
+        mPetPalUserDAO = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DB_NAME)
                 .allowMainThreadQueries()
                 .build()
                 .getPetPalUserDAO();
 
         petPalUsers = mPetPalUserDAO.getUserIDs();
+        if (petPalUsers.isEmpty()){
+            PetPalUser testuser1 = new PetPalUser("testuser1", "testuser1");
+            PetPalUser admin2 = new PetPalUser("admin2", "admin2");
+            admin2.setIsAdmin(true);
+            mPetPalUserDAO.insert(testuser1, admin2);
+        }
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PetPalUser loginUser = getValuesFromDisplay();
+                loginUser = getValuesFromDisplay();
 
                 if (loginUser == null){
                     Context context = getApplicationContext();
@@ -55,7 +63,10 @@ public class LoginActivity extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast.makeText(context, text, duration).show();
+                } else {
+                    OpenLandingPage(loginUser);
                 }
+
             }
         });
 
@@ -86,6 +97,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
         return null;
+    }
+    private void OpenLandingPage(PetPalUser loginUser){
+        Intent intent = UserLandingPage.getIntent(getApplicationContext(), loginUser);
+        startActivity(intent);
     }
 
 }

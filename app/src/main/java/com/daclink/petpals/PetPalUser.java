@@ -10,7 +10,6 @@ public class PetPalUser {
 
     @PrimaryKey(autoGenerate = true)
     private int userID;
-
     private String userName;
     private String petname;
     private String password;
@@ -31,7 +30,7 @@ public class PetPalUser {
     }
 
     public void setUserID(int userID) {
-        userID = userID;
+        this.userID = userID;
     }
 
     public String getUserName() {
