@@ -10,6 +10,14 @@ import com.daclink.petpals.PetPalUser;
 
 import java.util.List;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: PetPalUserDAO.java
+ * Abstract: DAO for ROOM DB - PETPAL_TABLE
+ * Date: 11 - April - 2023
+ */
+
 @Dao
 public interface PetPalUserDAO {
 

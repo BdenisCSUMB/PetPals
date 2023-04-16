@@ -8,6 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: CreateAccount.java
+ * Abstract: CreateAccount activity for users to create a new account.
+ * Date: 11 - April - 2023
+ */
+
 public class CreateAccount extends AppCompatActivity {
 
     Button returnToMainButton;

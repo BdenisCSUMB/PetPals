@@ -5,6 +5,14 @@ import androidx.room.PrimaryKey;
 
 import com.daclink.petpals.db.AppDatabase;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: PetPalUser.java
+ * Abstract: POJO for use in ROOM DB to store user information.
+ * Date: 11 - April - 2023
+ */
+
 @Entity(tableName = AppDatabase.PETPAL_TABLE)
 public class PetPalUser {
 

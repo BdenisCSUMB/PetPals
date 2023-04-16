@@ -16,6 +16,16 @@ import com.daclink.petpals.db.PetPalUserDAO;
 
 import java.util.List;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: LoginActivity.java
+ * Abstract: This Activity displays the login screen where users may enter their username and
+ *      password. This activity references values stored in the ROOM database and allows users to
+ *      log in if matching accounts are found.
+ * Date: 11 - April - 2023
+ */
+
 public class LoginActivity extends AppCompatActivity {
 
     Button returnToMainButton;

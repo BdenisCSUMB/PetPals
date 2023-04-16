@@ -9,6 +9,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: MainActivvity.java
+ * Abstract: MainActivity for users on startup. Offers two selections, new account or sign in.
+ * Date: 11 - April - 2023
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String MAIN_ACTIVITY_STARTUP = "com.daclink.petpals.MainActivityStartup";

@@ -13,18 +13,27 @@ import android.widget.TextView;
 import com.daclink.petpals.db.AppDatabase;
 import com.daclink.petpals.db.PetPalUserDAO;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: UserLandingPage.java
+ * Abstract: LandingPage activity. From this page users may update profile, create new post, or
+ *      logout. Users will only see adminbutton if isAdmin field = TRUE.
+ * Date: 11 - April - 2023
+ */
+
 public class UserLandingPage extends AppCompatActivity {
 
     private static final String USER_ID = "com.daclink.petpals.UserID";
 
     Button adminButton;
     Button logoutButton;
-
-    TextView userNameDisplay;
-
     //TODO
     //Button profileButton;
     //Button userInbox;
+
+
+    TextView userNameDisplay;
 
     int userId;
     PetPalUserDAO mPetPalUserDAO;
