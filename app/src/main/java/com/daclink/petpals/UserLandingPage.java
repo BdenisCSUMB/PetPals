@@ -40,7 +40,7 @@ public class UserLandingPage extends AppCompatActivity {
 
         userNameDisplay = findViewById(R.id.landing_username);
 
-        mPetPalUserDAO =  Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DB_NAME)
+        mPetPalUserDAO = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, AppDatabase.DB_NAME)
                 .allowMainThreadQueries()
                 .build()
                 .getPetPalUserDAO();
@@ -50,13 +50,19 @@ public class UserLandingPage extends AppCompatActivity {
 
         userNameDisplay.setText("Hello " + userAccount.getUserName() + "!");
 
-        if(userAccount.getIsAdmin()){
+        if (userAccount.getIsAdmin()) {
             adminButton.setVisibility(View.VISIBLE);
         }
 
-
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
-    public static Intent getIntent(Context context, PetPalUser loginUser){
+
+    public static Intent getIntent(Context context, PetPalUser loginUser) {
         Intent intent = new Intent(context, UserLandingPage.class);
         intent.putExtra(USER_ID, loginUser.getUserID());
         return intent;

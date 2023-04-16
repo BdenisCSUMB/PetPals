@@ -25,8 +25,8 @@ public interface PetPalUserDAO {
     @Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE)
     List<PetPalUser> getUserIDs();
 
-   @Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE + " WHERE userID = :userID")
-    PetPalUser findPetPalUser (int userID);
+    @Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE + " WHERE userID = :userID")
+    PetPalUser findPetPalUser(int userID);
 
 
 }

@@ -28,7 +28,8 @@ public class CreateAccount extends AppCompatActivity {
 
 
     }
-    public static Intent getIntent(Context context){
+
+    public static Intent getIntent(Context context) {
         return new Intent(context, CreateAccount.class);
     }
 }

@@ -40,16 +40,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openLoginActivity(){
+    public void openLoginActivity() {
         Intent intent = LoginActivity.getIntent(getApplicationContext());
         startActivity(intent);
     }
-    public void openNewAccountActivity(){
+
+    public void openNewAccountActivity() {
         Intent intent = CreateAccount.getIntent(getApplicationContext());
         startActivity(intent);
     }
-    public static Intent getIntent(Context context){
-        return new Intent(context, MainActivity.class );
+
+    public static Intent getIntent(Context context) {
+        return new Intent(context, MainActivity.class);
     }
 
 }

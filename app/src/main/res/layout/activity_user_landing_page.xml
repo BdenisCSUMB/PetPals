@@ -40,7 +40,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_corner"
-        android:text="@string/view_messages"
+        android:text="@string/view_posts"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/landing_profile"
@@ -64,27 +64,27 @@
         android:id="@+id/landing_logout"
         android:layout_width="151dp"
         android:layout_height="50dp"
-        android:text="@string/logout"
-        android:textSize="15sp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/rounded_corner"
+        android:text="@string/logout"
         android:textColor="@color/white"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/landing_username"
-        android:layout_width="210dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="UserName"
         android:textColor="@color/petpals"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent" />
 
