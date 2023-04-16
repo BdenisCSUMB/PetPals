@@ -89,6 +89,11 @@ public class PetPalUser {
         this.petbreed = petbreed;
     }
 
-    public Boolean getIsAdmin() { return isAdmin; }
-    public void setIsAdmin(Boolean isAdmin) { this.isAdmin = isAdmin; }
+    public Boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
 }

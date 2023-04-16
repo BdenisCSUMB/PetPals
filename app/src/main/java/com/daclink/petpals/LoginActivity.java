@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 .getPetPalUserDAO();
 
         petPalUsers = mPetPalUserDAO.getUserIDs();
-        if (petPalUsers.isEmpty()){
+        if (petPalUsers.isEmpty()) {
             PetPalUser testuser1 = new PetPalUser("testuser1", "testuser1");
             PetPalUser admin2 = new PetPalUser("admin2", "admin2");
             admin2.setIsAdmin(true);
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 loginUser = getValuesFromDisplay();
 
-                if (loginUser == null){
+                if (loginUser == null) {
                     Context context = getApplicationContext();
                     CharSequence text = "User not found. Try again.";
                     int duration = Toast.LENGTH_SHORT;
@@ -80,17 +80,19 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-    public static Intent getIntent(Context context){
-        return new Intent(context, LoginActivity.class );
+
+    public static Intent getIntent(Context context) {
+        return new Intent(context, LoginActivity.class);
     }
-    private PetPalUser getValuesFromDisplay(){
+
+    private PetPalUser getValuesFromDisplay() {
         String userName = "";
         String password = "";
 
         userName = userNameEdit.getText().toString();
         password = passwordEdit.getText().toString();
 
-        for(PetPalUser p: petPalUsers) {
+        for (PetPalUser p : petPalUsers) {
             if (p.getUserName().equals(userName)
                     && p.getPassword().equals(password)) {
                 return p;
@@ -98,7 +100,8 @@ public class LoginActivity extends AppCompatActivity {
         }
         return null;
     }
-    private void OpenLandingPage(PetPalUser loginUser){
+
+    private void OpenLandingPage(PetPalUser loginUser) {
         Intent intent = UserLandingPage.getIntent(getApplicationContext(), loginUser);
         startActivity(intent);
     }
