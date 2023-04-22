@@ -1,0 +1,108 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "afa96e482c16394a2a7d3e0d02d0f252",
+    "entities": [
+      {
+        "tableName": "PETPAL_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userName` TEXT, `password` TEXT, `isAdmin` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "userID",
+            "columnName": "userID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "userName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isAdmin",
+            "columnName": "isAdmin",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "userID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "PETPAL_PROFILES",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`profileID` INTEGER NOT NULL, `petName` TEXT, `petBreed` TEXT, `petSex` TEXT, `petLocation` TEXT, `age` INTEGER NOT NULL, `isBanned` INTEGER NOT NULL, PRIMARY KEY(`profileID`))",
+        "fields": [
+          {
+            "fieldPath": "profileID",
+            "columnName": "profileID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "petName",
+            "columnName": "petName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petBreed",
+            "columnName": "petBreed",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petSex",
+            "columnName": "petSex",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "petLocation",
+            "columnName": "petLocation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "age",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isBanned",
+            "columnName": "isBanned",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "profileID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'afa96e482c16394a2a7d3e0d02d0f252')"
+    ]
+  }
+}

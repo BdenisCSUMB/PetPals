@@ -5,32 +5,35 @@ import androidx.room.PrimaryKey;
 
 import com.daclink.petpals.db.AppDatabase;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: PetPalUser.java
+ * Abstract: POJO for use in ROOM DB to store user information.
+ * Date: 11 - April - 2023
+ */
+
 @Entity(tableName = AppDatabase.PETPAL_TABLE)
 public class PetPalUser {
 
     @PrimaryKey(autoGenerate = true)
-    private Integer UserID;
+    private int userID;
     private String userName;
-    private String petname;
     private String password;
-    private Integer petage;
-    private String petsex;
-    private String petlocation;
-    private String petbreed;
+    private Boolean isAdmin;
 
-
-    public PetPalUser(Integer UserID, String userName, String password) {
-        this.UserID = UserID;
+    public PetPalUser(String userName, String password) {
         this.userName = userName;
         this.password = password;
+        this.isAdmin = false;
     }
 
-    public Integer getUserID() {
-        return UserID;
+    public int getUserID() {
+        return userID;
     }
 
-    public void setUserID(Integer userID) {
-        UserID = userID;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public String getUserName() {
@@ -41,14 +44,6 @@ public class PetPalUser {
         this.userName = userName;
     }
 
-    public String getPetname() {
-        return petname;
-    }
-
-    public void setPetname(String petname) {
-        this.petname = petname;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -57,35 +52,11 @@ public class PetPalUser {
         this.password = password;
     }
 
-    public Integer getPetage() {
-        return petage;
+    public Boolean getIsAdmin() {
+        return isAdmin;
     }
 
-    public void setPetage(Integer petage) {
-        this.petage = petage;
-    }
-
-    public String getPetsex() {
-        return petsex;
-    }
-
-    public void setPetsex(String petsex) {
-        this.petsex = petsex;
-    }
-
-    public String getPetlocation() {
-        return petlocation;
-    }
-
-    public void setPetlocation(String petlocation) {
-        this.petlocation = petlocation;
-    }
-
-    public String getPetbreed() {
-        return petbreed;
-    }
-
-    public void setPetbreed(String petbreed) {
-        this.petbreed = petbreed;
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }
