@@ -13,22 +13,30 @@ import android.widget.TextView;
 import com.daclink.petpals.db.AppDatabase;
 import com.daclink.petpals.db.PetPalUserDAO;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: UserLandingPage.java
+ * Abstract: LandingPage activity. From this page users may update profile, create new post, or
+ *      logout. Users will only see adminbutton if isAdmin field = TRUE.
+ * Date: 11 - April - 2023
+ */
+
 public class UserLandingPage extends AppCompatActivity {
 
     private static final String USER_ID = "com.daclink.petpals.UserID";
 
-    Button adminButton;
-    Button logoutButton;
+    private Button adminButton;
+    private Button logoutButton;
+    private Button profileButton;
 
-    TextView userNameDisplay;
 
-    //TODO
-    //Button profileButton;
-    //Button userInbox;
+    private TextView userNameDisplay;
+    private TextView petPalPosts;
 
-    int userId;
-    PetPalUserDAO mPetPalUserDAO;
-    PetPalUser userAccount;
+    private int userId;
+    private PetPalUserDAO mPetPalUserDAO;
+    private PetPalUser userAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +45,9 @@ public class UserLandingPage extends AppCompatActivity {
 
         adminButton = findViewById(R.id.landing_admin);
         logoutButton = findViewById(R.id.landing_logout);
+        profileButton = findViewById(R.id.landing_profile);
+        petPalPosts = findViewById(R.id.pet_posts);
+
 
         userNameDisplay = findViewById(R.id.landing_username);
 
@@ -45,7 +56,7 @@ public class UserLandingPage extends AppCompatActivity {
                 .build()
                 .getPetPalUserDAO();
 
-        userId = getIntent().getIntExtra(USER_ID, 0);
+        userId = getIntent().getIntExtra(USER_ID, -1);
         userAccount = mPetPalUserDAO.findPetPalUser(userId);
 
         userNameDisplay.setText("Hello " + userAccount.getUserName() + "!");
@@ -60,11 +71,24 @@ public class UserLandingPage extends AppCompatActivity {
                 finish();
             }
         });
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadProfileView();
+            }
+        });
     }
 
-    public static Intent getIntent(Context context, PetPalUser loginUser) {
+    private void loadProfileView() {
+        Intent intent = ProfilePage.getIntent(getApplicationContext(), userId);
+        System.out.println("starting Profile Activity...");
+        startActivity(intent);
+
+    }
+
+    public static Intent getIntent(Context context, int loginUser) {
         Intent intent = new Intent(context, UserLandingPage.class);
-        intent.putExtra(USER_ID, loginUser.getUserID());
+        intent.putExtra(USER_ID, loginUser);
         return intent;
     }
 }
