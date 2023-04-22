@@ -28,24 +28,11 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/landing_inbox"
+        app:layout_constraintBottom_toTopOf="@+id/landing_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/landing_inbox"
-        android:layout_width="151dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/rounded_corner"
-        android:text="@string/view_posts"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/landing_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/landing_profile"
@@ -65,7 +52,7 @@
         android:layout_width="151dp"
         android:layout_height="50dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/rounded_corner"
+        android:background="@drawable/rounded_corner_red"
         android:text="@string/logout"
         android:textColor="@color/white"
         android:textSize="15sp"
@@ -84,8 +71,20 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pet_posts"
+        android:layout_width="388dp"
+        android:layout_height="381dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbars="vertical"
+        android:textSize="15sp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/landing_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

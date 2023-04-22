@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6b9f1051ff53ddf3d7a3ac4571ae9dd9",
+    "identityHash": "d8efdbfd02b7d938079c06c9999eef17",
     "entities": [
       {
         "tableName": "PETPAL_TABLE",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userName` TEXT, `petname` TEXT, `password` TEXT, `petage` INTEGER NOT NULL, `petsex` TEXT, `petlocation` TEXT, `petbreed` TEXT, `isAdmin` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userName` TEXT, `password` TEXT, `isAdmin` INTEGER)",
         "fields": [
           {
             "fieldPath": "userID",
@@ -21,38 +21,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "petname",
-            "columnName": "petname",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
             "fieldPath": "password",
             "columnName": "password",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "petage",
-            "columnName": "petage",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "petsex",
-            "columnName": "petsex",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "petlocation",
-            "columnName": "petlocation",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "petbreed",
-            "columnName": "petbreed",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -76,7 +46,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6b9f1051ff53ddf3d7a3ac4571ae9dd9')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd8efdbfd02b7d938079c06c9999eef17')"
     ]
   }
 }

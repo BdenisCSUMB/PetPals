@@ -60,6 +60,13 @@ public class LoginActivity extends AppCompatActivity {
             PetPalUser admin2 = new PetPalUser("admin2", "admin2");
             admin2.setIsAdmin(true);
             mPetPalUserDAO.insert(testuser1, admin2);
+            petPalUsers = mPetPalUserDAO.getUserIDs();
+
+            // Link profiles to new users
+            for (PetPalUser p: petPalUsers ){
+                PetPalProfile userProfile = new PetPalProfile(p.getUserID());
+                mPetPalUserDAO.insert(userProfile);
+            }
         }
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +81,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast.makeText(context, text, duration).show();
                 } else {
-                    OpenLandingPage(loginUser);
+                    System.out.println("Starting LandingPage Activity...");
+                    OpenLandingPage(loginUser.getUserID());
                 }
 
             }
@@ -111,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
         return null;
     }
 
-    private void OpenLandingPage(PetPalUser loginUser) {
+    private void OpenLandingPage(int loginUser) {
         Intent intent = UserLandingPage.getIntent(getApplicationContext(), loginUser);
         startActivity(intent);
     }
