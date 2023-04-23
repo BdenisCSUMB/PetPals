@@ -14,6 +14,14 @@ import android.widget.TextView;
 import com.daclink.petpals.db.AppDatabase;
 import com.daclink.petpals.db.PetPalUserDAO;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: ProfileEdit.java
+ * Abstract: To edit Profile
+ * Date: 21 - April - 2023
+ */
+
 public class ProfileEdit extends AppCompatActivity {
 
     private static final String PROFILEEDIT_ID = "com.daclink.petpals.ProfileEditID";
@@ -42,7 +50,7 @@ public class ProfileEdit extends AppCompatActivity {
         wireUpDisplay();
 
         profileID = getIntent().getIntExtra(PROFILEEDIT_ID, -1);
-        if(profileID != -1) {
+        if (profileID != -1) {
             System.out.println("Building database");
             buildDatabase();
         } else {
@@ -114,7 +122,7 @@ public class ProfileEdit extends AppCompatActivity {
         System.out.println("Display wiring complete.");
     }
 
-    public static Intent getIntent(Context context, int profileID){
+    public static Intent getIntent(Context context, int profileID) {
         Intent intent = new Intent(context, ProfileEdit.class);
         intent.putExtra(PROFILEEDIT_ID, profileID);
         return intent;

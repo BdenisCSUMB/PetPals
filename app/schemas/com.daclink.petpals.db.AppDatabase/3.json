@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "afa96e482c16394a2a7d3e0d02d0f252",
+    "identityHash": "1614ad9a26c56d04c54eb3c8cdc124c5",
     "entities": [
       {
         "tableName": "PETPAL_TABLE",
@@ -97,12 +97,56 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "PETPAL_POSTS",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mPostID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mUserID` INTEGER NOT NULL, `mPostText` TEXT, `mDate` INTEGER, `isReported` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mPostID",
+            "columnName": "mPostID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mUserID",
+            "columnName": "mUserID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mPostText",
+            "columnName": "mPostText",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDate",
+            "columnName": "mDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isReported",
+            "columnName": "isReported",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "mPostID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'afa96e482c16394a2a7d3e0d02d0f252')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1614ad9a26c56d04c54eb3c8cdc124c5')"
     ]
   }
 }

@@ -7,6 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.daclink.petpals.PetPalPost;
 import com.daclink.petpals.PetPalProfile;
 import com.daclink.petpals.PetPalUser;
 
@@ -38,6 +39,9 @@ public interface PetPalUserDAO {
     @Query("SELECT * FROM " + AppDatabase.PETPAL_TABLE + " WHERE userID = :userID")
     PetPalUser findPetPalUser(int userID);
 
+    @Query("SELECT * FROM " + AppDatabase.PETPAL_PROFILE)
+    List<PetPalProfile> getPetPalProfiles();
+
     @Query("SELECT * FROM " + AppDatabase.PETPAL_PROFILE + " WHERE profileID = :profileID")
     PetPalProfile findPetPalProfile(int profileID);
 
@@ -49,4 +53,19 @@ public interface PetPalUserDAO {
 
     @Delete
     void delete(PetPalProfile petPalProfile);
+
+    @Query("SELECT * FROM " + AppDatabase.PETPAL_POSTS)
+    List<PetPalPost> getPetPalPosts();
+
+    @Query("SELECT * FROM " + AppDatabase.PETPAL_POSTS + " WHERE mPostID = :postID")
+    PetPalPost findPetPalPost(int postID);
+
+    @Insert
+    void insert(PetPalPost... petPalPosts);
+
+    @Update
+    void update(PetPalPost... petPalPosts);
+
+    @Delete
+    void delete(PetPalPost petPalPost);
 }

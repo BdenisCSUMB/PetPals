@@ -15,6 +15,14 @@ import android.widget.TextView;
 import com.daclink.petpals.db.AppDatabase;
 import com.daclink.petpals.db.PetPalUserDAO;
 
+/**
+ * Author: Benjamin Denis
+ * Project: PetPals - Twitter for pets
+ * File: ProfilePage.java
+ * Abstract: To view Profile
+ * Date: 21 - April - 2023
+ */
+
 public class ProfilePage extends AppCompatActivity {
 
     private static final String PROFILE_ID = "com.daclink.petpals.profileID";
@@ -46,7 +54,7 @@ public class ProfilePage extends AppCompatActivity {
 
 
         profileID = getIntent().getIntExtra(PROFILE_ID, -1);
-        if(profileID != -1) {
+        if (profileID != -1) {
             System.out.println("Loading database");
             loadDataBase();
         } else {
@@ -100,6 +108,11 @@ public class ProfilePage extends AppCompatActivity {
 
     private void populateData(PetPalProfile petPalProfile, String userName) {
 
+        if (petPalProfile == null) {
+            petPalUserDAO.insert(new PetPalProfile(profileID));
+            petPalProfile = petPalUserDAO.findPetPalProfile(profileID);
+        }
+
         profileUsername.setText(userName);
         profileName.setText(petPalProfile.getPetName());
         profileBreed.setText(petPalProfile.getPetBreed());
@@ -126,7 +139,7 @@ public class ProfilePage extends AppCompatActivity {
 
     private void wireUpDisplay() {
         profileUsername = findViewById(R.id.profile_username);
-        profileName = findViewById(R.id.profile_name) ;
+        profileName = findViewById(R.id.profile_name);
         profileBreed = findViewById(R.id.profile_breed);
         profileAge = findViewById(R.id.profile_age);
         profileSex = findViewById(R.id.profile_sex);

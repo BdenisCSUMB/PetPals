@@ -12,6 +12,24 @@
         android:theme="@style/Theme.PetPals"
         tools:targetApi="31">
         <activity
+            android:name=".ViewPostByID"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPost"
+            android:exported="false" />
+        <activity
+            android:name=".BannedUsers"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewPost"
+            android:exported="false" />
+        <activity
+            android:name=".AdminTools"
+            android:exported="false" />
+        <activity
+            android:name=".CreateNewPost"
+            android:exported="false" />
+        <activity
             android:name=".ProfileEdit"
             android:exported="false" />
         <activity

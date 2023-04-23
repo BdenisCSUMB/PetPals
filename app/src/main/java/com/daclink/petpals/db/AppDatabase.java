@@ -2,11 +2,14 @@ package com.daclink.petpals.db;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
+import com.daclink.petpals.PetPalPost;
 import com.daclink.petpals.PetPalProfile;
 import com.daclink.petpals.PetPalUser;
 import com.daclink.petpals.db.typeConverters.BooleanTypeConverter;
+import com.daclink.petpals.db.typeConverters.DateTypeConverter;
 
 /**
  * Author: Benjamin Denis
@@ -16,8 +19,8 @@ import com.daclink.petpals.db.typeConverters.BooleanTypeConverter;
  * Date: 11 - April - 2023
  */
 
-@Database(entities = {PetPalUser.class, PetPalProfile.class}, version = 3)
-@TypeConverters(BooleanTypeConverter.class)
+@Database(entities = {PetPalUser.class, PetPalProfile.class, PetPalPost.class}, version = 3)
+@TypeConverters({DateTypeConverter.class, BooleanTypeConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
     public static final String DB_NAME = "PETPALUSER_DATA";
     public static final String PETPAL_TABLE = "PETPAL_TABLE";
